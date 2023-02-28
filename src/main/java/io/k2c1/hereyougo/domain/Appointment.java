@@ -30,6 +30,8 @@ public class Appointment
     @OneToOne
     private Post post;
 
+    private int appointmentQuantity; // 예약 수량
+
     private LocalDateTime timestamp; // 약속한 일/시
 
     private Progress progress;
