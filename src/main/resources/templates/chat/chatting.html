@@ -100,6 +100,11 @@
                         <input type="hidden" id="dateTime" name="dateTime">
                     </div>
 
+                    <div class="modal-container">
+                        <p class="sub-title">수량</p>
+                        <input type="text" id="requireQuantity" class="requireQuantity"/>
+                    </div>
+
                     <button type="button" class="btn btn-primary appoint-btn">등록</button>
                 </div>
             </div>
@@ -250,10 +255,17 @@
         const memberId = $('#memberId').val()
         const postId = $('#posstId').val()
 
+        <!-- 약속 날짜-->
         const dateValue = $('#appoint-date').val()
+        <!-- 약속 시간-->
         const timeValue = $('#appoint-time').val()
+        <!--  약속 날짜,시간 병합 -->
         const dateTimeString = dateValue + ' ' + timeValue + ':00';
+
         document.getElementById('dateTime').value = dateTimeString;
+        const requireQuantity = $('#requireQuantity').val()
+
+
 
         const dateTimeValue = $('#dateTime').val()
 
@@ -261,6 +273,7 @@
            postId : postId,
            memberId : memberId,
            dateTime: dateTimeValue
+           requireQuantity : requireQuantity
         };
 
         $.ajax({
